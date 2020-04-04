@@ -1,0 +1,23 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Covid.Views.Global">
+    <StackPanel HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <TextBlock FontWeight="Bold" >Cases:</TextBlock>
+            <TextBlock FontStyle="Oblique" Text="{Binding Cases}"  Margin="5 0 0 0"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <TextBlock FontWeight="Bold" >Recovered:</TextBlock>
+            <TextBlock FontStyle="Oblique" Text="{Binding Recovered}" Margin="5 0 0 0"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <TextBlock FontWeight="Bold" >Deaths:</TextBlock>
+            <TextBlock FontStyle="Oblique" Text="{Binding Deaths}"  Margin="5 0 0 0"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <TextBlock FontWeight="Bold" >Affected Countries:</TextBlock>
+            <TextBlock FontStyle="Oblique" Text="{Binding AffectedCountries}"  Margin="5 0 0 0"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

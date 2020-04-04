@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Covid.Views.Countries">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBox Watermark="Country Name or ISO3" Margin="5" Text="{Binding FilterName}" Grid.Row="0" />
+        <ListBox Items="{Binding Collection}" SelectedItem="{Binding SelectedCountry}" Grid.Row="1" Margin="5">
+            <ListBox.DataTemplates>
+                <DataTemplate>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding FlagImage}" Height="10" Width="10" />
+                            <TextBlock FontWeight="Bold" Text="{Binding Name}" Margin="5" />
+                            <TextBlock FontWeight="Bold" Margin="0 5">(</TextBlock>
+                            <TextBlock FontWeight="Bold" Text="{Binding ISO3}" Margin="0 5" />
+                            <TextBlock FontWeight="Bold" Margin="0 5">)</TextBlock>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock>Cases:</TextBlock>
+                            <TextBlock Margin="5 0 0 0" Text="{Binding Cases}" />
+                            <TextBlock Margin="5 0 0 0">Deaths:</TextBlock>
+                            <TextBlock Margin="5 0 0 0" Text="{Binding Deaths}" />
+                            <TextBlock Margin="5 0 0 0">Deaths/Million:</TextBlock>
+                            <TextBlock Margin="5 0 0 0" Text="{Binding DeathsPerOneMillion}" />
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.DataTemplates>
+        </ListBox>
+    </Grid>
+</UserControl>

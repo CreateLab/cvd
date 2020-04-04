@@ -1,0 +1,59 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:avalonia="http://oxyplot.org/avalonia"
+             x:Class="Covid.Views.CountryInfo">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+            <Image Source="{Binding FlagImage}" Height="20" Width="20" Margin="10 5 5 5" />
+            <TextBlock FontWeight="Bold" Text="{Binding Name}" Margin="5" HorizontalAlignment="Center" />
+            <TextBlock FontWeight="Bold" Margin="0 5" HorizontalAlignment="Center">(</TextBlock>
+            <TextBlock FontWeight="Bold" Text="{Binding ISO3}" Margin="0 5" HorizontalAlignment="Center" />
+            <TextBlock FontWeight="Bold" Margin="0 5" HorizontalAlignment="Center">)</TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <StackPanel Margin="5" Orientation="Horizontal">
+                <TextBlock FontWeight="Bold">Cases:</TextBlock>
+                <TextBlock Margin="5 0 0 0" Text="{Binding Cases}"></TextBlock>
+            </StackPanel>
+            <StackPanel Margin="5" Orientation="Horizontal">
+                <TextBlock FontWeight="Bold">TodayCases:</TextBlock>
+                <TextBlock Margin="5 0 0 0" Text="{Binding TodayCases}"></TextBlock>
+            </StackPanel>
+            <StackPanel Margin="5" Orientation="Horizontal">
+                <TextBlock FontWeight="Bold">Deaths:</TextBlock>
+                <TextBlock Margin="5 0 0 0" Text="{Binding Deaths}"></TextBlock>
+            </StackPanel>
+            <StackPanel Margin="5" Orientation="Horizontal">
+                <TextBlock FontWeight="Bold">TodayDeaths:</TextBlock>
+                <TextBlock Margin="5 0 0 0" Text="{Binding TodayDeaths}"></TextBlock>
+            </StackPanel>
+            <StackPanel Margin="5" Orientation="Horizontal">
+                <TextBlock FontWeight="Bold">Recovered:</TextBlock>
+                <TextBlock Margin="5 0 0 0" Text="{Binding Recovered}"></TextBlock>
+            </StackPanel>
+            <StackPanel Margin="5" Orientation="Horizontal">
+                <TextBlock FontWeight="Bold">Deaths / Million:</TextBlock>
+                <TextBlock Margin="5 0 0 0" Text="{Binding DeathsPerOneMillion}"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+       <avalonia:Plot Grid.Row="1" Grid.Column="1">
+           <avalonia:Plot.Series>
+               <avalonia:LineSeries Items="{Binding CollectionCases}" Color="Blue"></avalonia:LineSeries>
+               <avalonia:LineSeries Items="{Binding RecoverCases}" Color="Green"></avalonia:LineSeries>
+               <avalonia:LineSeries Items="{Binding DeathCases}" Color="Red"></avalonia:LineSeries>
+           </avalonia:Plot.Series>
+           <avalonia:Plot.Axes>
+               <avalonia:DateTimeAxis StringFormat="yyyy-MM-dd" Position="Bottom"></avalonia:DateTimeAxis>
+           </avalonia:Plot.Axes>
+       </avalonia:Plot>
+    </Grid>
+</UserControl>
