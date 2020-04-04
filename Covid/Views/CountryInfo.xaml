@@ -47,9 +47,9 @@
         </StackPanel>
        <avalonia:Plot Grid.Row="1" Grid.Column="1">
            <avalonia:Plot.Series>
-               <avalonia:LineSeries Items="{Binding CollectionCases}" Color="Blue"></avalonia:LineSeries>
-               <avalonia:LineSeries Items="{Binding RecoverCases}" Color="Green"></avalonia:LineSeries>
-               <avalonia:LineSeries Items="{Binding DeathCases}" Color="Red"></avalonia:LineSeries>
+               <avalonia:LineSeries Items="{Binding CollectionCases}" Color="Blue" Title="Cases"></avalonia:LineSeries>
+               <avalonia:LineSeries Items="{Binding RecoverCases}" Color="Green" Title="Recover"></avalonia:LineSeries>
+               <avalonia:LineSeries Items="{Binding DeathCases}" Color="Red" Title="Death"></avalonia:LineSeries>
            </avalonia:Plot.Series>
            <avalonia:Plot.Axes>
                <avalonia:DateTimeAxis StringFormat="yyyy-MM-dd" Position="Bottom"></avalonia:DateTimeAxis>
