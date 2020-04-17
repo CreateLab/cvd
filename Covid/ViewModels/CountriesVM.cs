@@ -60,7 +60,7 @@ namespace Covid.ViewModels
         private async Task GetAllCountriesInfo()
         {
             var countrySupportModels =
-                await "https://corona.lmao.ninja/countries".GetJsonAsync<List<CountrySupportModel>>();
+                await "https://corona.lmao.ninja/v2/countries".GetJsonAsync<List<CountrySupportModel>>();
             var tasks = countrySupportModels.Where(c => c.CountryInfo.Iso3 != null).Select(async c => new Country()
             {
                 Cases = c.Cases,

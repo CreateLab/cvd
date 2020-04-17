@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.Reactive;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
@@ -91,7 +92,7 @@ namespace Covid.ViewModels
             {
                 cases.Add(new Case()
                 {
-                    DateTime = Convert.ToDateTime(c.Key),
+                    DateTime = Convert.ToDateTime(c.Key,new CultureInfo("en-US")),
                     Count = c.Value
                 });
             }

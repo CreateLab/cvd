@@ -53,7 +53,7 @@ namespace Covid.ViewModels
 
         private async Task GetAllCases()
         {
-            var allCases = await "https://corona.lmao.ninja/all".GetJsonAsync<AllCases>();
+            var allCases = await "https://corona.lmao.ninja/v2/all".GetJsonAsync<AllCases>();
             Cases = allCases.Cases;
             AffectedCountries = allCases.AffectedCountries;
             Recovered = allCases.Recovered;
